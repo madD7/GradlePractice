@@ -1,0 +1,2 @@
+println "oneMore.gradle is in .gradle/init.d/. directory."
+println "oneMore.gradle -- will be executed in the Initialization phase."

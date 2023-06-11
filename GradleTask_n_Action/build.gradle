@@ -1,0 +1,148 @@
+import java.time.LocalDateTime
+
+// This doesnt seem to work for some reason. but must work.
+// But this is hardcoding the dependency graph. 
+// Gradle allows us to have our tasks dependent on other tasks so we can build up dependency graph of tasks.
+// In our Configuration code, we can specify for any given task that can depend on another task's execution.
+defaultTasks 'firstTask', 'thirdTask'
+
+gradle.ext.timestamp = {
+	LocalDateTime.now().toString()		// return statement
+}
+
+// Tasks are created in configuration phase. In Execution phase, the tasks are executed, ie. perfom atomic actions for build.
+// Action object can be added to Task using methods - doFirst() or doLast().
+// These methods can take Action interface as input parameter or Closure.
+// doFirst and doLast methods return Task. Thus method chaining can be done.
+
+logger.info "Tasks and Actions Demonstration."
+
+// Defining the task 
+task firstTask
+
+// passing the Closure to the method doLast of task. Add task in RunConfiguration.
+firstTask.doLast {
+	logger.info "This is doLast method of the firstTask."
+}
+
+
+// Configuring the task while creating it, by passing configuration closure. 
+// In configuration Closure, we set different properties.
+task secondTask {
+	description = "Second example task."
+	group = "Task n Action"
+	
+	// doFirst & doLast can be configured during configuration phase.
+	// we can have multiple doFirst & doLast methods.
+	doFirst {
+		logger.info "This is doFirst method of $name."
+	}
+	
+	// This will be executed before the pervious defined doFirst. 
+	// This is because, gradle adds the given Closure at the begining of the 
+	// task's action list for doFirst. While for doLast methods, gradle adds the Closure 
+	// at the end of the task's action list.
+	doFirst {
+		logger.info "This is one more doFirst method of $name."
+	}
+	
+	doLast {
+		logger.info "This is doLast method of $name."
+	}
+}
+
+logger.info secondTask.description
+
+secondTask.doLast{
+	logger.info "This is another doLast method of $name."
+}
+
+
+// Chaining methods
+task thirdTask {
+	description = "$name example task."
+	group = "Task n Action"
+}
+
+// As the doFirst method returns Task, we can chain methods.
+thirdTask.doFirst {
+	logger.info "This is doFirst method of $name."
+}.doFirst {
+	logger.info "This is one more doFirst method of $name."
+}.doLast {
+	logger.info "This is doLast method of $name."
+}
+
+
+// Task dependency
+task fourthTask (dependsOn: 'thirdTask') {
+	doLast {
+		logger.info "This is doFirst method of $name."
+	}
+}
+
+// Depends on multiple Tasks, passing a list/array of dependent Tasks.
+task fifthTask (dependsOn: ['thirdTask', 'fourthTask']) {
+	doLast {
+		logger.info "This is doFirst method of $name."
+	}
+}
+
+// Searching for a task using filter.
+logger.info "Searching for task starting with 'third' in name ${ project.tasks
+																	.findAll {task -> task.name.startsWith('third') } }" 
+																	
+// the above findAll closure filter can also be used to find dependency 
+// Eg: 
+task sixthTask ( dependsOn: [ tasks.findAll {task -> task.name.startsWith('third') } , 'fifthTask' ]) {
+	logger.info "This is $name Task."
+}
+
+// using dependsOn method on the task.
+task seventhTask{
+	logger.info "This is $name Task."
+}
+
+// We dont use the quotes to name the dependent task as we are actually accessing the Task 
+seventhTask.dependsOn fifthTask
+seventhTask.dependsOn sixthTask
+
+// A list of tasks can also be passed. Also Closure filter can be used to evaluate multiple tasks
+seventhTask.dependsOn tasks.findAll {task -> task.name.startsWith('third') }, fourthTask
+
+// adding dependencies, based on condition.
+if ( Math.random() < 0.5 ){
+	seventhTask.dependsOn secondTask, firstTask
+}
+
+// Accessing Dependency graph. 
+// The dependency graph is a DAG = Direct Acyclic Graph.
+// We can't have circular dependencies. If exists, results to runtime exception.
+// Knowing the tasks in the task graph can help in conditional builds.
+logger.info "Dependency Graph: $project.gradle.taskGraph"
+logger.info "All Tasks: $project.gradle.taskGraph.allTasks"		// Prints empty list
+
+// called when the graph is fully populated.
+project.gradle.taskGraph.whenReady { taskGraph -> 			// taskGraph object is directly available inside whenReady 
+	
+	if ( taskGraph.hasTask(fifthTask) ) {					// False	
+		logger.info "Task graph has fifthTask."	
+	}
+	
+	if ( taskGraph.hasTask(firstTask) ) {					// True
+		logger.info "Task graph has firstTask."				
+		// you may execute some other code or want to set some property.
+	}
+	
+	logger.info "All Tasks: $project.gradle.taskGraph.allTasks"		// Prints a list of tasks
+}
+
+
+// beforeTask and afterTask runs before & after every tasks.
+gradle.taskGraph.beforeTask { task ->		// Excepts task 
+	logger.info "--------- Before Task $task.name."
+}
+
+gradle.taskGraph.afterTask { task ->		// Excepts task 
+	logger.info "--------- After Task $task.name."
+}

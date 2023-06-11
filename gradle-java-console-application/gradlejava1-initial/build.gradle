@@ -1,0 +1,45 @@
+// Adding java plugin so that we can build & compile our java source code
+plugins {
+  id 'java'
+}
+
+project.group = 'com.denofprogramming'
+project.version = "0.0.1-SHAPSHOT"
+
+// mavenCentral is method on the delegate object (RepositoryHandler) of 'repositories' context
+repositories{
+	mavenCentral()
+}
+
+// dependencies context had delegate object (DependenciesHandler).
+dependencies{
+	// https://mvnrepository.com/artifact/org.apache.commons/commons-math3
+	implementation 'org.apache.commons:commons-math3:3.6.1'
+	
+	// https://mvnrepository.com/artifact/junit/junit
+	testImplementation 'junit:junit:4.13.2'
+}
+
+// Changing the Jar file baseName
+jar {
+	baseName="$project.name-all"
+	
+	// manifest takes a closure. To attributes property, Pass a map with key:value pair to store attributes and values in Manifest file.
+	manifest { 
+		attributes  'Implementation-Title' : 'Gradle all inclusive jar', 
+						'Implementation-Version' : project.version,
+						'Created-By': 'Anonymous Author',
+						'Main-Class' : 'com.denofprogramming.random.App'
+	}
+	
+	println "Jar file baseName : $baseName"
+	println "manifest.attributes : $manifest.attributes. "
+	
+	// ZipTree method unzips the dependency jar package (eg: org.apache.commons) and include the contents 
+	// into our jar file. This is done to include all the dependencies into our jar. 
+	println project.configurations.runtimeClasspath.collect( {File file -> project.zipTree(file)} )
+	
+	from {
+		project.configurations.runtimeClasspath.collect( {File file -> project.zipTree(file)} )
+	}
+}

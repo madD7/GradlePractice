@@ -1,0 +1,65 @@
+plugins {
+  id 'java'
+  id 'war'
+}
+
+group = 'com.denofprogramming'
+version = '0.0.1-SNAPSHOT'
+
+// Java version
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+// User defined property
+project.ext.tomcatWebAppsPath = "D:/Softwares/apache-tomcat-10.1.9-windows-x64/apache-tomcat-10.1.9/webapps"
+
+repositories{
+	mavenCentral()
+}
+
+
+dependencies { 
+
+	implementation ('org.springframework:spring-webmvc:4.0.3.RELEASE'){
+		// We want to exclude commons logging library
+		exclude group:'commons-logging', module:'commons-logging'		
+	} 
+	
+	implementation 'javax.inject:javax.inject:1'
+	implementation 'org.apache.commons:commons-math3:3.2'
+	implementation 'jstl:jstl:1.2'
+	// implementation 'log4j:log4j:1.2.17'	// Commented after adding sl4j
+	
+	// Two logging framework are used in this application. 
+	// one is direct dependency - log4j.
+	// other is 'commons-logging:commons-logging:1.1.3' - transitive dependency of 'org.springframework:spring-webmvc:4.0.3.RELEASE'
+	// https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
+	// sl4j also provides wrapper to multiple logging libraries.
+	implementation 'org.slf4j:slf4j-log4j12:1.7.25'
+	
+	// https://mvnrepository.com/artifact/org.slf4j/jcl-over-slf4j
+	implementation 'org.slf4j:jcl-over-slf4j:2.0.7'		// To resolve transitive dependency on commons.logging
+			
+	// It basically means that we don't need to provide that dependency with our War file 
+	// because it's actually can be provided by the server container itself.	
+	compileOnly "javax.servlet:javax.servlet-api:3.0.1"	// compileOnly - We dont want to add it when we want to deploy it.
+	testImplementation	'junit:junit:4.11'
+}
+
+// war = Web Application Archive.
+// war file is used to distribute a collection of Jar files, Java Servlet pages, array of xml files, type libraries,
+// static web pages (html), related files, and other resources that may contribute to web application.
+// war task is similar to jar task.
+// Configuration closure of war.
+war {
+	archiveName = "MyWebAppInitial.war"		// war file name
+}
+
+
+// Task to copy war file across Apache Tomcat server, where it can be deployed.
+// Our task, is of type 'Copy' class. Its like inheriting Copy class for our task.
+task deployToTomcat(type: Copy, dependsOn: ['clean','war']){
+	from war.archivePath
+	into "$tomcatWebAppsPath"
+}

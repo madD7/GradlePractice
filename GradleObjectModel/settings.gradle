@@ -1,0 +1,7 @@
+// settings.gradle is an optional file in a single project. 
+// Gradle determines which projects to include in build by refering to settings.gradle.
+// In this project, we use settings.grale to demonstrate lifecycle of gradle build.
+
+logger.info "In settings.gradle"
+logger.info "Time - ${gradle.timestamp()}."		// because - 'gradle' object can be accessed throughout the build lifecycle.
+

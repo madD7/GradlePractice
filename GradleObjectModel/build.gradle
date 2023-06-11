@@ -1,0 +1,59 @@
+// logger is available on gradle script without importing any object.
+// There are various other properties and methods available on gradle script ie. gradle object.
+// To enable logging info, Go to RunConfiguration > ProjectSettings > Check - Override Project Settings > Program Arguments = add '-i'
+
+// In a single project, we can have more than one gradle scripts. (having *.gradle extension)
+// Gradle Initialization files are kept in {%ProjectHome%}\.gradle\init.d directory.
+// Execution of this files can be specified in Program arguments with '-I{filepath}' flags 
+
+
+// 'gradle' object can be accessed throughout the build lifecycle.
+
+// When we execute build.gradle, it instantiates an object that implements 'script' interface.
+// This instantiation is done for every build script within our build.
+
+logger.info "Hello World!"
+logger.info "Time - ${gradle.timestamp()}."		// because - 'gradle' object can be accessed throughout the build lifecycle.
+logger.info "Can also be written as  - ${project.gradle.timestamp()}."
+
+// apply method takes in a Closure. 
+apply {
+	println "Applied Closure."
+}
+
+logger.info "Property: gradleVersion. Value: ${gradle.gradleVersion}."
+logger.info "Property: gradleHomeDir. Value: ${gradle.gradleHomeDir}."
+logger.info "Property: gradleUserHomeDir. Value: ${gradle.gradleUserHomeDir}."
+
+// build.gradle - delegates to Object of Project interface. hence 'project.'
+// Name of the Build script. 
+logger.info "Property: BuildFile. Value: ${project.buildFile}."
+
+// RelativePath method returns relative path from project directory.
+logger.info "Method: RelativePath. Value: ${project.relativePath(project.buildFile)}."
+
+
+// User can define own properties. Trying to access a property that doesnt exists will 
+// result to runtime error. hasproperty method can be used to check if the property exists or not. 
+// hasproperty returns boolean.
+logger.info "Method: hasProperty. To verify if the property exists."
+logger.info "Using hasProperty to verfiy if 'projectDir' exists: ${project.hasProperty('projectDir')}." 
+
+if ( project.hasProperty('gradlePropertyOne') ){
+	logger.info "User defined property: gradlePropertyOne. Value: ${gradlePropertyOne}."
+} else {
+	logger.info "User defined property gradlePropertyOne, does not exists."
+}
+
+// 'project.' is optional
+if ( hasProperty('gradlePropertyTwo') ){
+	logger.info "Command Line property: gradlePropertyTwo. Value: ${gradlePropertyTwo}."
+} else {
+	logger.info "Command Line property gradlePropertyTwo, does not exists."	
+}
+
+// Objects that implement an interface 'ExtensionAware' intrinsically have access to 
+// extended name properties. One example is - 'timestamp'. 
+project.ext.otherExample="This is .ext. property example."
+logger.info "Extended Property example. ${project.ext.otherExample}."
+logger.info otherExample		// This is valid.

@@ -1,0 +1,216 @@
+defaultTasks 'Hello'
+
+task('Hello').doLast{
+	println "Hello World!"
+}
+
+// Method can be called before its declaration and/or defination.
+function1()
+println "Double value is: " + doubleNum(5)
+println "Triple value is: " + tripleNum(5)
+println "Square of num is: " + squareNum(5)
+
+
+void function1(){
+	println "Hello. We are inside function1."
+}
+
+int doubleNum(int i){
+	println "Input num to be doubled: " + i
+	i * 2		// The value of the last executable statement is returned.
+}
+
+// Note def is the return type. ie. not specific type is defined for return value.
+// The return value is an object.
+def tripleNum(i){
+	println "Input num to be tripled: " + i
+	i * 3
+}
+
+Integer squareNum(Integer i){
+	println "Input num to be Squared: " + i
+	i * i
+}
+
+
+// Groovy Strings 
+def s1 = "Hi. This is valid string wrapped in double qoutes."
+def s2 = 'Hi. This is valid string wrapped in single quotes.'
+
+def multiLineString = """ Multiline strings 
+are enclosed/wrapped in
+three double quotes."""
+
+println s1
+println s2
+println multiLineString
+
+// String interpolation, ie. variable value substitution is same as in Linux Shell.
+def x=4
+println "Value of x is $x."
+println "Value of x is ${x}."
+
+// String interpolation works only if the string is enclosed inside double quotes
+// and not in single quotes. This behaviour is same as Linux Shell. 
+// Also, if {} are used, then code inside {} is executed.
+def myStr = "code executed."
+println "Code execution demo. ${myStr.toUpperCase()}." 
+
+
+// Class Example
+class Person {
+	String name
+	Integer age
+	
+	Person(name, age){
+		this.name = name
+		this.age = age
+	}
+	
+	// Ignore this for now. Refer after completing closures.
+	// 
+	def executeInside(Closure c){
+		c.delegate = this			// assign 'this' instance to the delegate property of closure.  
+		c()							// Execute closure
+	}
+}
+
+Person p1 = new Person("Fred", 27)
+def p2 = new Person("Bill", 32)
+
+println "The age of $p1.name is $p1.age."
+println "The age of $p2.name is $p2.age." 
+
+
+// Map example
+Map m = new HashMap()
+m.put("Foo", "Fred")
+
+println "The value of foo: " + m.get("Foo")
+
+m.Foo = "NewBill"
+println "The value of foo: " + m.get("Foo")
+
+m.bar = "Jane"
+m.boz = "Jack"
+
+println "The value of bar in map is: ${m.bar}."
+
+
+// Closures - Closures are like lambda functions in Java 8. 
+// Closures are declared using a pair of {}
+// Using def, the type is Object. Thus the return type is Object.
+
+// Closure with no execution statement.
+def nullClosure = {}
+println nullClosure()
+
+// Closure with execution statement but no return. 
+// Last statement is return statement. As nothing to return, null is returned. 
+def printClosure = {
+	println "Hello from Clousre."
+}
+
+println "printClosure returned: " + printClosure()
+
+// 'it' is the default parameter
+def itClosure = { 
+	println it
+}
+
+itClosure("This will be printed by - 'it'.")
+
+// Closure with untyped parameter. Same as Lambda in Java. 
+def ParamClosure = { param -> 
+	println param
+}
+
+// Note: Not using println. Println would have printed the return value, ie. null.
+ParamClosure("Hello Parameter.")
+
+
+// Closure with typed parameter. 
+def typeParamClosure = { String param-> 
+	println "typeParamClosure: " + param
+}
+
+typeParamClosure("5")
+// typeParamClosure(5)      // results to runtime exception.
+
+// Multiple parameters
+def multipleParamClosure = { a,b,c -> 
+	println "a: " + a + ". b: " + b + ". c: " + c + "."
+}
+
+multipleParamClosure("Hi.", "This is example.", "Bye.")
+
+// Passing closure as argument
+def oneArgMethod(closure){
+	closure() * 2 		// The result of the last statement is returned.
+}
+
+// As the parantheses are optional in groovy, in below, while invoking method, 
+// parantheses are not used. 
+println "Passing closure as argument: " + oneArgMethod {4} 
+
+// However using parantheses is also valid
+println "Passing closure as argument: " + oneArgMethod({7})
+
+
+// With multiple arguments, the closure is always the last argument to the method.
+def twoArgMethod(factor, closure){
+	closure() * factor
+}
+
+println "The result of twoArgMethod is: " + twoArgMethod(3, {5})
+
+// Passing multiline closure
+def i = oneArgMethod({ // Code block ie. multiple lines of code
+						def y = 3
+						y * 2			// The closure will return 6. which is then multiplied by 2 in the oneArgMethod. 
+					})
+
+println "The value of i is: " + i
+assert i == 12
+
+
+// Here we are actually passing closure to each method.
+[1,2,3].each {
+	println it
+}
+
+// is same as 
+["hi", "hello", "bye"].each({println it})
+
+// Closure Resolution 
+class PersonDetails{
+	String firstName = "Fredie" 	// Instance Variable 1
+	String lastName = "Ramsay"		// Instance Variable 2
+	
+	// Instance Variable 3 = printFullName - holds a closure.
+	Closure printFullName = {
+		println "FullName: " + firstName + " " + lastName
+	}
+}
+
+def p3 = new PersonDetails()
+println p3.printFullName		// Prints the closure reference.
+p3.printFullName()			// Execute the closure. Look at the syntax carefully. It may seem confusing.
+
+// The closure has reference of the variable theName.
+def theName = "John"
+def sayName = {
+	println "The name is: " + theName
+}
+
+sayName()		// Execute the closure 'sayName'
+theName = "Groovy"
+sayName()
+
+// Using Person to understand closure delegate
+def p4 = new Person("NewName", 51)
+p4.executeInside( {println "theName is: " + theName} )		// Passing the closure to executeInside method of the Person instance p4.
+// theName = 'Groovy'
+
+
+

@@ -1,0 +1,13 @@
+import java.time.LocalDateTime
+
+// Closure assigned to a variable in Initialization script.
+// This variable will now act as Global variable and will be available throughout the 
+// build lifetime.
+gradle.ext.timestamp = {
+	LocalDateTime.now().toString()		// return statement
+}
+
+println "another.gradle is in .gradle/init.d/. directory."
+println "another.gradle -- will be executed in the Initialization phase."
+println "Time - ${gradle.timestamp()}."
+

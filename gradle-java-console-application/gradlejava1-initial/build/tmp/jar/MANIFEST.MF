@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Implementation-Title: Gradle all inclusive jar
+Implementation-Version: 0.0.1-SHAPSHOT
+Created-By: Anonymous Author
+Main-Class: com.denofprogramming.random.App
+
