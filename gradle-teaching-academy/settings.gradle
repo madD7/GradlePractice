@@ -1,16 +1,20 @@
 include 'academy-utils'
 include 'academy-shared'
 include 'academy-web'
+
+// Audit
 include 'academy-audit-interface'
 include 'academy-audit'
 include 'academy-audit-repository'
 include 'academy-audit-integration'
 
+// Users
 include 'academy-user-details-interface'
 include 'academy-user-details'
 include 'academy-user-details-repository'
 include 'academy-user-details-integration'
 
+// Student
 include 'academy-student-interface'
 include 'academy-student'
 include 'academy-student-integration'
@@ -30,9 +34,12 @@ include 'academy-registration-integration'
 rootProject.name = theName
 
 rootProject.children.each { subproject -> 
+
+	// all the 'build.gradle' files are named as '<project-name>.gradle' to make it easier to 
+	// recognize which gradle file it is.
+	// The following lines tell gradle to look for file names instead of build.gradle
      subproject.buildFileName = "${subproject.name}.gradle" 
 }
 
 
-// all the 'build.gradle' files are named as '<project-name>.gradle' to make it easier to 
-// recognize which gradle file it is.
+
