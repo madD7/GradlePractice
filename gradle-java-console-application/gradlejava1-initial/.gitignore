@@ -11,3 +11,5 @@ target/
 
 .metadata 
 .classpath
+/.gradle/
+/build/

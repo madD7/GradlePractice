@@ -1,0 +1,69 @@
+
+// To Configure sub-projects, we use 'subprojects' block
+// subprojects block takes a closure, which gets applied to each of the project objects of our subprojects.
+subprojects {
+    apply plugin: 'java'				// apply - method
+    
+    // properties
+    group = 'com.denofprogramming.com'
+    version = '0.0.1-SNAPSHOT'
+    
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8 
+    
+    repositories {
+    	mavenCentral()
+    }
+    
+    // Common dependencies can be added here.
+    dependencies{
+    
+    }  
+}
+
+
+// Gradle allows to access any project of Multi-project build from any build script. 
+// This is known as Cross-Project configuration.
+// project method takes path as an argument and returns 'Project' object  
+project (':pickerNumberApplication1-initial'){
+	// This is configuration Closure
+	
+	// Project specific dependencies.	
+	dependencies{
+		implementation 'org.apache.commons:commons-math3:3.6.1'
+		implementation 'org.apache.logging.log4j:log4j-core:2.5'
+		
+		testImplementation 'junit:junit:4.13.2'	
+	}
+}
+
+// this project is dependent on the library created by randomNumberGen1
+// The plusplus project has a transitive dependency - commons-math3 library.
+project (':plusplus-initial'){
+	dependencies{
+		// non-maven-central dependency 
+		implementation project (':randomNumberGen1-initial') 
+	}
+}
+
+// this project generates a library and is not a standalone app.
+project (':randomNumberGen1-initial'){
+
+	// api is available in 'java-library' and not 'java'
+	// java-library plugin has both api and implementation.
+	apply plugin: 'java-library'
+	
+	dependencies{
+		
+		// As this is a transitive dependency, required in plusplus project, 
+		// implementation must be replaced by 'api'
+		// implementation 'org.apache.commons:commons-math3:3.6.1'
+		
+		// api is used to expose the dependency to the consumers of the library.
+		api 'org.apache.commons:commons-math3:3.6.1'
+		implementation 'org.apache.logging.log4j:log4j-core:2.5'
+		
+		testImplementation 'junit:junit:4.13.2'	
+	}
+}
+
