@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.denofprogramming.controller.StudentControllerIT" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-06-12T14:34:43" hostname="DESKTOP-PBVI1F4" time="0.483">
+  <properties/>
+  <testcase name="readStudentTest" classname="com.denofprogramming.controller.StudentControllerIT" time="0.483"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Jun 12, 2023 8:04:43 PM org.springframework.test.context.TestContextManager retrieveTestExecutionListeners
+INFO: Could not instantiate TestExecutionListener class [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their dependencies) available.
+Jun 12, 2023 8:04:43 PM org.springframework.test.context.TestContextManager retrieveTestExecutionListeners
+INFO: Could not instantiate TestExecutionListener class [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their dependencies) available.
+Jun 12, 2023 8:04:43 PM org.springframework.context.support.GenericApplicationContext prepareRefresh
+INFO: Refreshing org.springframework.context.support.GenericApplicationContext@479cbee5: startup date [Mon Jun 12 20:04:43 IST 2023]; root of context hierarchy
+Jun 12, 2023 8:04:44 PM org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor <init>
+INFO: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+Jun 12, 2023 8:04:44 PM com.denofprogramming.service.StudentService read
+INFO: Entered StudentService->read with:User [id=null, name=null, age=0]
+Jun 12, 2023 8:04:44 PM com.denofprogramming.service.UserService read
+INFO: Entered UserService->read with:User [id=null, name=null, age=0]
+Jun 12, 2023 8:04:44 PM com.denofprogramming.repository.UserRepositoryIT read
+INFO: Entered UserRepositoryIT->read with:User [id=null, name=null, age=0]
+Jun 12, 2023 8:04:44 PM com.denofprogramming.repository.UserRepositoryIT read
+INFO: Exiting UserRepositoryIT->read with:User [id=null, name=Jim Beam, age=46]
+Jun 12, 2023 8:04:44 PM com.denofprogramming.service.StudentService read
+INFO: Exiting StudentService->read with:User [id=null, name=Jim Beam, age=46]
+]]></system-err>
+</testsuite>

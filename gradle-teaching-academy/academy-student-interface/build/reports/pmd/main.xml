@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.39.0" timestamp="2023-06-12T20:04:45.769">
+<file name="D:\workspaceGradle\gradle-teaching-academy\academy-student-interface\src\main\java\com\denofprogramming\controller\StudentControllerInterface.java">
+<violation beginline="5" endline="7" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.controller" class="StudentControllerInterface" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+</file>
+<file name="D:\workspaceGradle\gradle-teaching-academy\academy-student-interface\src\main\java\com\denofprogramming\model\Student.java">
+<violation beginline="3" endline="17" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.model" class="Student" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+<violation beginline="5" endline="7" begincolumn="9" endcolumn="2" rule="UnnecessaryConstructor" ruleset="Code Style" package="com.denofprogramming.model" class="Student" method="Student" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="5" endline="7" begincolumn="9" endcolumn="2" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.model" class="Student" method="Student" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+<violation beginline="9" endline="15" begincolumn="16" endcolumn="2" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.model" class="Student" method="valueOf" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+</file>
+<file name="D:\workspaceGradle\gradle-teaching-academy\academy-student-interface\src\main\java\com\denofprogramming\service\StudentServiceInterface.java">
+<violation beginline="5" endline="8" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.service" class="StudentServiceInterface" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+</file>
+<configerror rule="LoosePackageCoupling" msg="No packages or classes specified"/>
+</pmd>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.39.0" timestamp="2023-06-12T20:04:32.293">
+<file name="D:\workspaceGradle\gradle-teaching-academy\academy-registration\src\main\java\com\denofprogramming\controller\RegistrationController.java">
+<violation beginline="15" endline="50" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.controller" class="RegistrationController" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+<violation beginline="15" endline="50" begincolumn="8" endcolumn="1" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.denofprogramming.controller" class="RegistrationController" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+<violation beginline="18" endline="18" begincolumn="10" endcolumn="54" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.controller" class="RegistrationController" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Field comments are required
+</violation>
+<violation beginline="21" endline="21" begincolumn="10" endcolumn="52" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.controller" class="RegistrationController" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Field comments are required
+</violation>
+<violation beginline="24" endline="24" begincolumn="10" endcolumn="58" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.controller" class="RegistrationController" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Field comments are required
+</violation>
+<violation beginline="26" endline="26" begincolumn="23" endcolumn="113" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.controller" class="RegistrationController" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Field comments are required
+</violation>
+<violation beginline="29" endline="29" begincolumn="27" endcolumn="45" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.denofprogramming.controller" class="RegistrationController" method="read" variable="domain" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'domain' is not assigned and could be declared final
+</violation>
+<violation beginline="36" endline="36" begincolumn="3" endcolumn="32" rule="LawOfDemeter" ruleset="Design" package="com.denofprogramming.controller" class="RegistrationController" method="read" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
+Potential violation of Law of Demeter (object not created locally)
+</violation>
+<violation beginline="37" endline="37" begincolumn="3" endcolumn="34" rule="LawOfDemeter" ruleset="Design" package="com.denofprogramming.controller" class="RegistrationController" method="read" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_design.html#lawofdemeter" priority="3">
+Potential violation of Law of Demeter (object not created locally)
+</violation>
+<violation beginline="44" endline="44" begincolumn="29" endcolumn="53" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.denofprogramming.controller" class="RegistrationController" method="update" variable="DomainObject" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'DomainObject' is not assigned and could be declared final
+</violation>
+</file>
+<file name="D:\workspaceGradle\gradle-teaching-academy\academy-registration\src\main\java\com\denofprogramming\service\RegistrationService.java">
+<violation beginline="13" endline="40" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.service" class="RegistrationService" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+<violation beginline="13" endline="40" begincolumn="8" endcolumn="1" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.denofprogramming.service" class="RegistrationService" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+<violation beginline="16" endline="16" begincolumn="10" endcolumn="64" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.service" class="RegistrationService" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Field comments are required
+</violation>
+<violation beginline="18" endline="18" begincolumn="23" endcolumn="107" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.service" class="RegistrationService" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Field comments are required
+</violation>
+<violation beginline="22" endline="22" begincolumn="27" endcolumn="45" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.denofprogramming.service" class="RegistrationService" method="read" variable="domain" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'domain' is not assigned and could be declared final
+</violation>
+<violation beginline="33" endline="33" begincolumn="29" endcolumn="53" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.denofprogramming.service" class="RegistrationService" method="update" variable="domainObject" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'domainObject' is not assigned and could be declared final
+</violation>
+</file>
+<configerror rule="LoosePackageCoupling" msg="No packages or classes specified"/>
+</pmd>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.39.0" timestamp="2023-06-12T20:04:27.816">
+<file name="D:\workspaceGradle\gradle-teaching-academy\academy-courses-interface\src\main\java\com\denofprogramming\controller\CourseControllerInterface.java">
+<violation beginline="5" endline="7" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.controller" class="CourseControllerInterface" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+</file>
+<file name="D:\workspaceGradle\gradle-teaching-academy\academy-courses-interface\src\main\java\com\denofprogramming\model\Course.java">
+<violation beginline="3" endline="25" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.model" class="Course" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+<violation beginline="6" endline="6" begincolumn="10" endcolumn="21" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.model" class="Course" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Field comments are required
+</violation>
+<violation beginline="9" endline="11" begincolumn="9" endcolumn="2" rule="UnnecessaryConstructor" ruleset="Code Style" package="com.denofprogramming.model" class="Course" method="Course" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="9" endline="11" begincolumn="9" endcolumn="2" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.model" class="Course" method="Course" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+<violation beginline="17" endline="17" begincolumn="22" endcolumn="32" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.denofprogramming.model" class="Course" method="setName" variable="name" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'name' is not assigned and could be declared final
+</violation>
+</file>
+<file name="D:\workspaceGradle\gradle-teaching-academy\academy-courses-interface\src\main\java\com\denofprogramming\repository\CourseRepositoryInterface.java">
+<violation beginline="5" endline="7" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.repository" class="CourseRepositoryInterface" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+</file>
+<file name="D:\workspaceGradle\gradle-teaching-academy\academy-courses-interface\src\main\java\com\denofprogramming\service\CourseServiceInterface.java">
+<violation beginline="5" endline="8" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.service" class="CourseServiceInterface" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+</file>
+<configerror rule="LoosePackageCoupling" msg="No packages or classes specified"/>
+</pmd>

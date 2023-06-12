@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.39.0" timestamp="2023-06-12T20:04:38.020">
+<file name="D:\workspaceGradle\gradle-teaching-academy\academy-registration-repository\src\main\java\com\denofprogramming\repository\RegistrationRepository.java">
+<violation beginline="11" endline="35" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.repository" class="RegistrationRepository" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+<violation beginline="11" endline="35" begincolumn="8" endcolumn="1" rule="AtLeastOneConstructor" ruleset="Code Style" package="com.denofprogramming.repository" class="RegistrationRepository" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+<violation beginline="14" endline="14" begincolumn="23" endcolumn="113" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.repository" class="RegistrationRepository" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Field comments are required
+</violation>
+<violation beginline="17" endline="17" begincolumn="27" endcolumn="45" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.denofprogramming.repository" class="RegistrationRepository" method="read" variable="domain" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'domain' is not assigned and could be declared final
+</violation>
+<violation beginline="27" endline="27" begincolumn="29" endcolumn="47" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.denofprogramming.repository" class="RegistrationRepository" method="update" variable="domain" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'domain' is not assigned and could be declared final
+</violation>
+</file>
+<configerror rule="LoosePackageCoupling" msg="No packages or classes specified"/>
+</pmd>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.39.0" timestamp="2023-06-12T20:04:39.418">
+<file name="D:\workspaceGradle\gradle-teaching-academy\academy-shared\src\main\java\com\denofprogramming\controller\ControllerInterface.java">
+<violation beginline="5" endline="11" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.controller" class="ControllerInterface" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+<violation beginline="7" endline="7" begincolumn="2" endcolumn="30" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.controller" class="ControllerInterface" method="read" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+<violation beginline="9" endline="9" begincolumn="2" endcolumn="32" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.controller" class="ControllerInterface" method="update" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+</file>
+<file name="D:\workspaceGradle\gradle-teaching-academy\academy-shared\src\main\java\com\denofprogramming\model\DomainObject.java">
+<violation beginline="3" endline="51" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.model" class="DomainObject" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+<violation beginline="6" endline="6" begincolumn="10" endcolumn="17" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.model" class="DomainObject" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Field comments are required
+</violation>
+<violation beginline="9" endline="10" begincolumn="9" endcolumn="2" rule="UnnecessaryConstructor" ruleset="Code Style" package="com.denofprogramming.model" class="DomainObject" method="DomainObject" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="9" endline="10" begincolumn="9" endcolumn="2" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="com.denofprogramming.model" class="DomainObject" method="DomainObject" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="9" endline="10" begincolumn="9" endcolumn="2" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.model" class="DomainObject" method="DomainObject" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+<violation beginline="22" endline="22" begincolumn="9" endcolumn="22" rule="AvoidFinalLocalVariable" ruleset="Code Style" package="com.denofprogramming.model" class="DomainObject" method="hashCode" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#avoidfinallocalvariable" priority="3">
+Avoid using final local variables, turn them into fields
+</violation>
+<violation beginline="29" endline="29" begincolumn="24" endcolumn="33" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="com.denofprogramming.model" class="DomainObject" method="equals" variable="obj" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'obj' is not assigned and could be declared final
+</violation>
+<violation beginline="30" endline="31" begincolumn="3" endcolumn="15" rule="IfStmtsMustUseBraces" ruleset="Code Style" package="com.denofprogramming.model" class="DomainObject" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#ifstmtsmustusebraces" priority="3">
+Avoid using if statements without curly braces
+</violation>
+<violation beginline="31" endline="31" begincolumn="4" endcolumn="15" rule="OnlyOneReturn" ruleset="Code Style" package="com.denofprogramming.model" class="DomainObject" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="32" endline="33" begincolumn="3" endcolumn="16" rule="IfStmtsMustUseBraces" ruleset="Code Style" package="com.denofprogramming.model" class="DomainObject" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#ifstmtsmustusebraces" priority="3">
+Avoid using if statements without curly braces
+</violation>
+<violation beginline="33" endline="33" begincolumn="4" endcolumn="16" rule="OnlyOneReturn" ruleset="Code Style" package="com.denofprogramming.model" class="DomainObject" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="34" endline="35" begincolumn="3" endcolumn="16" rule="IfStmtsMustUseBraces" ruleset="Code Style" package="com.denofprogramming.model" class="DomainObject" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#ifstmtsmustusebraces" priority="3">
+Avoid using if statements without curly braces
+</violation>
+<violation beginline="35" endline="35" begincolumn="4" endcolumn="16" rule="OnlyOneReturn" ruleset="Code Style" package="com.denofprogramming.model" class="DomainObject" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="36" endline="36" begincolumn="3" endcolumn="41" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="com.denofprogramming.model" class="DomainObject" method="equals" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'other' could be declared final
+</violation>
+<violation beginline="38" endline="39" begincolumn="4" endcolumn="17" rule="IfStmtsMustUseBraces" ruleset="Code Style" package="com.denofprogramming.model" class="DomainObject" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#ifstmtsmustusebraces" priority="3">
+Avoid using if statements without curly braces
+</violation>
+<violation beginline="39" endline="39" begincolumn="5" endcolumn="17" rule="OnlyOneReturn" ruleset="Code Style" package="com.denofprogramming.model" class="DomainObject" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+<violation beginline="40" endline="41" begincolumn="10" endcolumn="16" rule="IfStmtsMustUseBraces" ruleset="Code Style" package="com.denofprogramming.model" class="DomainObject" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#ifstmtsmustusebraces" priority="3">
+Avoid using if statements without curly braces
+</violation>
+<violation beginline="41" endline="41" begincolumn="4" endcolumn="16" rule="OnlyOneReturn" ruleset="Code Style" package="com.denofprogramming.model" class="DomainObject" method="equals" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_codestyle.html#onlyonereturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
+</violation>
+</file>
+<file name="D:\workspaceGradle\gradle-teaching-academy\academy-shared\src\main\java\com\denofprogramming\repository\RepositoryInterface.java">
+<violation beginline="3" endline="10" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.repository" class="RepositoryInterface" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+<violation beginline="6" endline="6" begincolumn="2" endcolumn="30" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.repository" class="RepositoryInterface" method="read" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+<violation beginline="8" endline="8" begincolumn="2" endcolumn="32" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.repository" class="RepositoryInterface" method="update" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+</file>
+<file name="D:\workspaceGradle\gradle-teaching-academy\academy-shared\src\main\java\com\denofprogramming\service\ServiceInterface.java">
+<violation beginline="5" endline="13" begincolumn="8" endcolumn="1" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.service" class="ServiceInterface" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Class comments are required
+</violation>
+<violation beginline="8" endline="8" begincolumn="2" endcolumn="30" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.service" class="ServiceInterface" method="read" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+<violation beginline="10" endline="10" begincolumn="2" endcolumn="32" rule="CommentRequired" ruleset="Documentation" package="com.denofprogramming.service" class="ServiceInterface" method="update" externalInfoUrl="https://pmd.github.io/pmd-6.39.0/pmd_rules_java_documentation.html#commentrequired" priority="3">
+Public method and constructor comments are required
+</violation>
+</file>
+<configerror rule="LoosePackageCoupling" msg="No packages or classes specified"/>
+</pmd>
